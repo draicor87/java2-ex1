@@ -1,0 +1,310 @@
+1. Faça um programa que leia dois valores numéricos inteiros e apresente o resultado da diferença do maior valor pelo menor valor. Se os valores forem iguais, o programa deve mostrar zero.
+______________________________________________________
+
+public class Exercicio1 {
+	public static void main(String[] args) {
+		int n1, n2, res;
+		
+		System.out.print("Digite o primeiro número: ");
+		n1 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o segundo número: ");
+		n2 = Integer.parseInt(System.console().readLine());
+		
+		if (n1 > n2)
+		{
+			res = n1 - n2;
+			System.out.printf("A diferença entre os valores é: %d\n", res);
+		}
+		if (n2 > n1)
+		{
+			res = n2 - n1;
+			System.out.printf("A diferença entre os valores é: %d\n", res);
+		}
+		if (n1 == n2)
+		{
+			res = 0;
+			System.out.printf("A diferença entre os valores é: %d\n", res);
+		}
+	}
+}
+________________________________________________________
+2. Faça um programa que leia um valor numérico inteiro. O programa deve apresentar a mensagem “O valor está na faixa permitida”, caso o valor informado esteja entre 1 e 9. Se o valor estiver fora da faixa, o programa deve apresentar a mensagem “O valor está fora da faixa permitida”.
+______________________________________________________
+
+public class Exercicio2 {
+	public static void main(String[] args) {
+		int n1;
+		
+		System.out.print("Digite o valor: ");
+		n1 = Integer.parseInt(System.console().readLine());
+		
+		if (n1 > 0 && n1 < 10)
+			System.out.print("O valor está na faixa permitida");
+		else
+			System.out.print("O valor está fora da faixa permitida");
+	}
+}
+________________________________________________________
+3. Construa um programa que leia três valores numéricos (representados pelas variáveis A, B e C) e faça o cálculo do delta de uma equação de segundo grau, segundo a fórmula de Báskara. O programa deve mostrar quantas raízes reais a equação possui (delta < 0 – mostrar uma mensagem dizendo que a equação não possui raízes reais, delta > 0 – mostrar que possui duas raízes reais, delta = 0 – mostrar que possui uma única raiz real).
+______________________________________________________
+
+public class Exercicio3 {
+	public static void main(String[] args) {
+		double A, B, C, delta;
+		
+		System.out.prinln("\nEste programa lê três valores numéricos,\nrepresentados pelas variáveis A, B e C,\nentão faz o cálculo do delta de uma equação de segundo grau,\nsegundo a fórmula de Báskara.\nO programa deve mostrar quantas raízes reais a equação possui\n");
+		System.out.print("Digite o primeiro valor: ");
+		A = Double.parseDouble(System.console().readLine());
+		System.out.print("Digite o segundo valor: ");
+		B = Double.parseDouble(System.console().readLine());
+		System.out.print("Digite o terceiro valor: ");
+		C = Double.parseDouble(System.console().readLine());
+		
+		delta = (B * B) - 4 * A * C;
+
+		if (delta < 0)
+			System.out.println("\nA equação não possui raízes reais\n");
+
+		if (delta > 0)
+			System.out.println("\nA equação possui duas raízes reais\n");
+
+		if (delta == 0)
+			System.out.println("\nA equação possui uma raíz real\n");
+	}
+}
+________________________________________________________
+4. Construa um programa que leia três valores para os lados de um triângulo (A, B e C). O programa deve verificar se os lados fornecidos formam realmente um triângulo. Em caso positivo, deve mostrar a mensagem “Os lados formam um triângulo” e caso contrário “Os valores informados não podem formar um triângulo”. Para que três valores de lados formem um triângulo, cada par de lados somados não pode ser menor ou igual ao terceiro lado.
+______________________________________________________
+
+public class Exercicio4 {
+	public static void main(String[] args) {
+		double A, B, C, soma;
+		
+		System.out.println("\nEste programa le tres valores para os lados de um triangulo (A, B e C). O programa verifica se os lados fornecidos formam realmente um triangulo.\n");
+
+		System.out.print("Digite a medida do primeiro lado do triangulo: ");
+		A = Double.parseDouble(System.console().readLine());
+		System.out.print("Digite a medida do segundo lado do triangulo: ");
+		B = Double.parseDouble(System.console().readLine());
+		System.out.print("Digite a medida do terceiro lado do triangulo: ");
+		C = Double.parseDouble(System.console().readLine());
+		
+		soma = A + B;
+
+		if (soma > C)
+			System.out.println("\nOs lados formam um triângulo\n");
+		else
+			System.out.println("\nOs valores informados não podem formar um triângulo\n");
+	}
+}
+========================================================================
+		if(A + B > C && A + C > B && B + C > A)
+			System.out.println("Os lados formam um triangulo");
+		else
+			System.out.println("Os valores informados nao podem formar um triangulo");
+========================================================================
+________________________________________________________
+5. Desenvolva um programa que leia quatro valores numéricos inteiros e mostre os valores que são divisíveis por 2 e 3.
+______________________________________________________
+
+public class Exercicio5 {
+	public static void main(String[] args) {
+		int n1, n2, n3, n4;
+		
+		System.out.print("\nEste programa le quatro valores numericos inteiros\ne mostra os valores que sao divisiveis por 2 e 3.\n");
+
+		System.out.print("\n");
+		System.out.print("Digite o primeiro numero: ");
+		n1 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o segundo numero: ");
+		n2 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o terceiro numero: ");
+		n3 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o quarto numero: ");
+		n4 = Integer.parseInt(System.console().readLine());
+		System.out.print("\n");
+
+		if (((n1 % 2) == 0)  && ((n1 % 3)  ==0))
+                    System.out.printf("O numero %d e Divisivel por 2 e 3\n", n1);
+                if (((n2 % 2) == 0)  && ((n2 % 3)  ==0))
+                    System.out.printf("O numero %d e Divisivel por 2 e 3\n", n2);
+		if (((n3 % 2) == 0)  && ((n3 % 3)  ==0))
+                    System.out.printf("O numero %d e Divisivel por 2 e 3\n", n3);
+		if (((n4 % 2) == 0)  && ((n4 % 3)  ==0))
+                    System.out.printf("O numero %d e Divisivel por 2 e 3\n", n4);
+	}
+}
+________________________________________________________
+6. Faça um programa que leia quatro valores numéricos inteiros e mostre os valores que são divisíveis por 2 ou 3.
+______________________________________________________
+
+public class Exercicio6 {
+	public static void main(String[] args) {
+		int n1, n2, n3, n4;
+		
+		System.out.print("\nEste programa le quatro valores numericos inteiros\ne mostra os valores que sao divisiveis por 2 ou 3.\n");
+
+		System.out.print("\n");
+		System.out.print("Digite o primeiro numero: ");
+		n1 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o segundo numero: ");
+		n2 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o terceiro numero: ");
+		n3 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o quarto numero: ");
+		n4 = Integer.parseInt(System.console().readLine());
+		System.out.print("\n");
+
+		if ((n1 % 2) == 0) 
+                    System.out.printf("O numero %d e Divisivel por 2\n", n1);
+                if ((n2 % 2) == 0) 
+                    System.out.printf("O numero %d e Divisivel por 2\n", n2);
+		if ((n3 % 2) == 0) 
+                    System.out.printf("O numero %d e Divisivel por 2\n", n3);
+		if ((n4 % 2) == 0) 
+                    System.out.printf("O numero %d e Divisivel por 2\n", n4);
+		if ((n1 % 3) == 0) 
+                    System.out.printf("O numero %d e Divisivel por 3\n", n1);
+		if ((n2 % 3) == 0) 
+                    System.out.printf("O numero %d e Divisivel por 3\n", n2);
+		if ((n3 % 3) == 0) 
+                    System.out.printf("O numero %d e Divisivel por 3\n", n3);
+		if ((n4 % 3) == 0) 
+                    System.out.printf("O numero %d e Divisivel por 3\n", n4);
+	}
+}
+________________________________________________________
+7. Desenvolva um programa que leia três valores numéricos inteiros, identifique e apresente o maior valor informado.
+______________________________________________________
+
+public class Exercicio7 {
+	public static void main(String[] args) {
+		int n1, n2, n3;
+		
+		System.out.print("\nEste programa le tres valores numericos inteiros\ne mostra o valor maior.\n");
+
+		System.out.print("\n");
+		System.out.print("Digite o primeiro numero: ");
+		n1 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o segundo numero: ");
+		n2 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o terceiro numero: ");
+		n3 = Integer.parseInt(System.console().readLine());
+		System.out.print("\n");
+		
+		if (n1 > n2 && n1 > n3)
+                    System.out.printf("O numero maior e %d\n", n1);
+		if (n2 > n1 && n2 > n3)
+                    System.out.printf("O numero maior e %d\n", n2);
+		if (n3 > n1 && n3 > n2)
+                    System.out.printf("O numero maior e %d\n", n3);
+	}
+}
+________________________________________________________
+8. Faça um programa que leia três valores numéricos inteiros, identifique e apresente o menor valor informado.
+______________________________________________________
+
+public class Exercicio8 {
+	public static void main(String[] args) {
+		int n1, n2, n3;
+		
+		System.out.print("\nEste programa le tres valores numericos inteiros\ne mostra o valor menor.\n");
+
+		System.out.print("\n");
+		System.out.print("Digite o primeiro numero: ");
+		n1 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o segundo numero: ");
+		n2 = Integer.parseInt(System.console().readLine());
+		System.out.print("Digite o terceiro numero: ");
+		n3 = Integer.parseInt(System.console().readLine());
+		System.out.print("\n");
+		
+		if (n1 < n2 && n1 < n3)
+                    System.out.printf("O numero menor e %d\n", n1);
+		if (n2 < n1 && n2 < n3)
+                    System.out.printf("O numero menor e %d\n", n2);
+		if (n3 < n1 && n3 < n2)
+                    System.out.printf("O numero menor e %d\n", n3);
+	}
+}
+________________________________________________________
+9. Uma empresa decide dar um aumento de 30% aos funcionários cujo salário é inferior a 5000. Escreva um programa que possa ser utilizado para efetuar o cálculo do salário reajustado de um funcionário, a partir do valor do salário informado pelo usuário.
+______________________________________________________
+
+public class Exercicio9 {
+	public static void main(String[] args) {
+		double salario1, salario2, aumento;
+		
+		System.out.print("\nEste programa recebe o valor do salario\ne mostra o valor com aumento de 30%.\n");
+
+		System.out.print("\n");
+		System.out.print("Digite o valor do salario: R$ ");
+		salario1 = Double.parseDouble(System.console().readLine());
+		System.out.print("\n");
+
+		if (salario1 >= 5000) {
+			System.out.println("Este salario é igual ou superior a R$ 5000,00");
+		} else {
+				aumento = salario1 * 0.3;
+				salario2 = salario1 + aumento;
+				System.out.printf("O valor do salario com o aumento é: R$ %.2f\n", salario2);
+		}
+	}
+}
+________________________________________________________
+10. A nota final de um estudante é calculada a partir de três notas atribuídas, respectivamente, a um trabalho de laboratório, a uma avaliação semestral e a um exame final. A média das três notas mencionadas obedece aos pesos a seguir:
+
+Nota Peso
+Trabalho de laboratório - 2
+Avaliação semestral - 3
+Exame final - 5
+
+Faça um programa que receba as três notas, calcule e mostre a média ponderada e o conceito que segue a tabela:
+
+Média Ponderada Conceito
+8,0 (inclusive) a 10,0 (inclusive) - A
+7,0 (inclusive) a 8,0 - B
+6,0 (inclusive) a 7,0 - C
+5,0 (inclusive) a 6,0 - D
+0,0 (inclusive) a 5,0 - E
+______________________________________________________
+
+public class Exercicio10 {
+	public static void main(String[] args) {
+		double n1, n2, n3, media;
+		
+		System.out.println("\nEste programa recebe as tres notas de um aluno,\ncalcula e mostra a media ponderada e o conceito do mesmo.\n");
+
+		System.out.print("Digite a primeira nota: ");
+		n1 = Double.parseDouble(System.console().readLine());
+		System.out.print("Digite a segunda nota: ");
+		n2 = Double.parseDouble(System.console().readLine());
+		System.out.print("Digite a terceira nota: ");
+		n3 = Double.parseDouble(System.console().readLine());
+		System.out.print("\n");
+		
+		media = (n1 * 2.0 + n2 * 3.0 + n3 * 5.0) / (2.0 + 3.0 + 5.0);
+
+		if (media >= 0.0 && media < 5.0) {
+			System.out.printf("Media: %.1f\n", media);
+			System.out.println("Conceito: E\n");
+			}
+		if (media >= 5.0 && media < 6.0) {
+			System.out.printf("Media: %.1f\n", media);
+			System.out.println("Conceito: D\n");
+			}
+		if (media >= 6.0 && media < 7.0) {
+			System.out.printf("Media: %.1f\n", media);
+			System.out.println("Conceito: C\n");
+			}
+		if (media >= 7.0 && media < 8.0) {
+			System.out.printf("Media: %.1f\n", media);
+			System.out.println("Conceito: B\n");
+			}
+		if (media >= 8.0 && media <= 10.0) {
+			System.out.printf("Media: %.1f\n", media);
+			System.out.println("Conceito: A\n");
+			}
+	}
+}
+________________________________________________________
